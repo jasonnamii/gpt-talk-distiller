@@ -14,7 +14,28 @@ NOT: 일반대화요약(→직접수행), 세션브리핑(→session-briefing), 
 > **목표 = 시간 흐름에 흩어진 결정·수치·번복을 토픽별로 재조립하여 누락 없이 보존.**
 > ChatGPT Exporter md → 4패턴 분기 → 토픽 재조립 → 8종 채굴 → 압축 정리.
 
+
+## Skill Boundaries
+
+- **하는 것** — 챗지피티(ChatGPT) 대화 추출·정리 엔진.
+- **안 하는 것** — 범위 외 작업은 관련 스킬로 라우팅
+
 ---
+
+## When to Use
+
+- 사용자가 P2 트리거 동사구 같은 표현으로 발동
+- 도메인 작업이 필요한 시점
+- **안 쓸 때** — 범위 외 작업
+
+
+## Prerequisites
+
+| # | 체크 | 미충족 시 |
+|---|------|-----------|
+| 1 | 대상·입력 명확 (스킬 발동 의도 확인) | 1줄 확인 후 진입 |
+| 2 | references/ 폴더 접근 가능 | inline fallback |
+
 
 ## 🔄 흐름
 
@@ -227,7 +248,31 @@ ELSE:
 
 ---
 
-## Gotchas
+## Output Path
+
+| 산출물 | 경로 |
+|---|---|
+| 주 산출물 | `mnt/outputs/gpt-talk-distiller_{topic}_{YYYY-MM-DD}.md` |
+| 형식 | .md로 |
+| 리서치 결과 (해당 시) | `{VAULT}/_skills research/gpt-talk-distiller/{YYYY-MM-DD}_{topic}.md` |
+
+## Reference Index
+
+| 파일 | 내용 | 언제 |
+|---|---|---|
+| `references/extraction-rules.md` | extraction rules | 해당 단계 진입 시 |
+| `references/output-templates.md` | output templates | 해당 단계 진입 시 |
+| `references/pattern-router.md` | pattern router | 해당 단계 진입 시 |
+
+
+## Next Phase
+
+본 스킬 작업 후 자연스럽게 이어지는 흐름:
+
+- 작업 결과 검토·이어가기 → `session-briefing` (결정·미결·다음 저장)
+- 산출물 다듬기 → `shaper-skill` (외부 독자용 본문)
+
+## Failure Modes (Gotchas)
 
 | 함정 | 대응 |
 |------|------|
@@ -241,6 +286,14 @@ ELSE:
 | 외부 LLM(GPT·Gemini) 위임 | 대화 내용 외부 노출 우려. 디폴트 차단 |
 
 ---
+
+
+## ❌ WRONG vs ✅ CORRECT
+
+```
+❌ WRONG: 트리거 단어만 보고 발동 — 본질·범위 확인 ✗ → 오발동·범위 이탈
+✅ CORRECT: Skill Boundaries·When to Use 확인 후 발동 → 본질 작업만 수행
+```
 
 ## §9. references 매핑
 
