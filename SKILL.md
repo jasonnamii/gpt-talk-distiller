@@ -1,13 +1,7 @@
 ---
 name: gpt-talk-distiller
 description: |
-  챗지피티(ChatGPT) 대화 추출·정리 엔진. ChatGPT Exporter md를 입력받아 4종 패턴(점진심화·점프·반복압박·메모리주입) 자동 분류 → 토픽 재조립 → 채굴 8종(결정·수치·미결·아이디어·액션·번복·메타·압박회귀) → 압축 정리 .md 출력.
-  P1: 챗지피티정리, 챗지피티추출, GPT대화정리, GPT대화추출, ChatGPT추출, ChatGPT정리, gpt-talk-distiller, 토픽재조립, 대화증류, 대화압축정리, 발화쌍채굴, 번복추적, 압박회귀.
-  P2: 정리해줘, 추출해줘, 압축해줘, 증류해줘, 재조립해줘, distill, extract, organize.
-  P3: chatgpt conversation extraction, topic re-threading, decision archive, conversation distillation.
-  P4: ChatGPT Exporter md 업로드 시, "이 대화 정리해줘" 요청 시, 흩어진 결정·번복 추적 필요 시.
-  P5: .md로, 옵시디언으로.
-  NOT: 일반대화요약(→직접수행), 세션브리핑(→session-briefing), 팩트체크(→fact-checker), 리서치(→research-skill), 카피(→copywriting-skill).
+  챗지피티(ChatGPT) 대화 추출·정리 엔진. ChatGPT Exporter md를 입력받아 4종 패턴(점진심화·점프·반복압박·메모리주입) 자동 분류 → 토픽 재조립 → 채굴 8종(결정·수치·미결·아이디어·액션·번복·메타·압박회귀) → 압축 정리 .md 출력. 트리거: 챗지피티정리, 챗지피티추출, GPT대화정리, GPT대화추출, ChatGPT추출, ChatGPT정리, gpt-talk-distiller, 토픽재조립, 대화증류, 대화압축정리, 발화쌍채굴, 번복추적, 압박회귀, 정리해줘, 추출해줘, 압축해줘, 증류해줘, 재조립해줘, distill. NOT: 일반대화요약(→직접수행), 세션브리핑(→session-briefing), 팩트체크(→fact-checker), 리서치(→research-skill), 카피(→copywriting-skill).
 ---
 
 # gpt-talk-distiller — 챗지피티 대화 증류 엔진
